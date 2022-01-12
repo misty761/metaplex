@@ -142,7 +142,7 @@ export function useCollapseWrappedSol({
         if ((balance && balance.value.uiAmount) || 0 > 0) {
           setShowNotification(true);
         }
-      } catch (e) {}
+      } catch (e) { }
     }
     setTimeout(fn, 60000);
   };
@@ -290,7 +290,7 @@ export function useSettlementAuctions({
               safetyDepositBoxesByVaultAndIndex,
               metadataByMint,
               bidderMetadataByAuctionAndBidder:
-                updatedBidderMetadataByAuctionAndBidder,
+              updatedBidderMetadataByAuctionAndBidder,
               bidderPotsByAuctionAndBidder,
               bidRedemptionV2sByAuctionManagerAndWinningIndex,
               masterEditions,
@@ -565,9 +565,13 @@ export function Notifications() {
   );
 
   const justContent = (
-    <Popover placement="bottomLeft" content={content} trigger="click">
-      <img src={'/bell.svg'} style={{ cursor: 'pointer' }} />
-      {!!notifications.length && <div className="mobile-notification">{notifications.length - 1}</div>}
+    <Popover
+      className="noty-popover"
+      placement="bottomLeft"
+      content={content}
+      trigger="click"
+    >
+      <h1 className="title">M</h1>
     </Popover>
   );
 
